@@ -43,6 +43,9 @@ target_date2 = datetime(2025, 5, 28)
 days_left2 = (target_date2 - current_date).days
 target_date3 = datetime(2025, 9, 19)
 days_left3 = (target_date3 - current_date).days
+target_date4 = datetime(2025, 4, 4)
+days_left4 = (target_date4 - current_date).days
+
 
 @app.event("app_mention")
 def event_test(body, say, logger):
@@ -64,24 +67,25 @@ def event_test(body, say, logger):
 					"indent": 0,
 					"border": 0,
 					"elements": [
+												{
+							"type": "rich_text_section",
+							"elements": [
+								{"type": "text","text": "훈님 도쿄까지 "},
+								{"type": "text","text": f"{days_left4}일","style": {"code" : True}},
+								{"type": "text","text": " 남았지롱"},
+                {
+									"type": "emoji",
+									"name": "flag-jp",
+									"unicode": "1f1ef-1f1f5"
+								}
+							]
+						},
 						{
 							"type": "rich_text_section",
 							"elements": [
-								{
-									"type": "text",
-									"text": "태훈님 포르투갈까지 "
-								},
-								{
-									"type": "text",
-									"text": f"{days_left2}일",
-                   "style": {
-                    "code" : True
-                  }
-								},
-								{
-									"type": "text",
-									"text": " 남았지롱"
-								},
+								{"type": "text","text": "태훈님 포르투갈까지 "},
+								{"type": "text","text": f"{days_left2}일","style": {"code" : True}},
+								{"type": "text","text": " 남았지롱"},
                 {
 									"type": "emoji",
 									"name": "flag-pt",
@@ -92,21 +96,9 @@ def event_test(body, say, logger):
 						{
 							"type": "rich_text_section",
 							"elements": [
-								{
-									"type": "text",
-									"text": "보라님 호주까지 "
-								},
-								{
-									"type": "text",
-									"text": f"{days_left3}일",
-								   "style": {
-                    "code" : True
-                  }
-								},
-								{
-									"type": "text",
-									"text": " 남았지롱"
-								},
+								{"type": "text","text": "보라님 호주까지 "},
+								{"type": "text","text": f"{days_left3}일","style": {"code" : True}},
+								{"type": "text","text": " 남았지롱"},
                 {
 									"type": "emoji",
 									"name": "flag-au",
